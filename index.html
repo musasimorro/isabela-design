@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabella Designs | Soluções Digitais para Casamentos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FDFBF9; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        
+        .flip-card { background-color: transparent; width: 100%; height: 460px; perspective: 1000px; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; border: 1px solid #e5e7eb; background: white; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border-radius: 4px; overflow: hidden; }
+        
+        .flip-card-back { 
+            transform: rotateY(180deg); 
+            background-image: linear-gradient(rgba(253, 251, 249, 0.85), rgba(253, 251, 249, 0.85)), url('imagens/LOGO.png');
+            background-size: 95%;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #1c1917; 
+            justify-content: center; 
+            padding: 2rem; 
+        }
+        
+        .card-img { width: 100%; height: 220px; object-fit: cover; }
+
+        .ticker-wrap { width: 100%; overflow: hidden; }
+        .ticker-move { display: flex; animation: marquee 25s linear infinite; width: fit-content; gap: 2rem; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .ticker-move:hover { animation-play-state: paused; }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/5514997373496" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 2c-5.514 0-10 4.486-10 10 0 1.763.461 3.489 1.334 5.006l-1.334 4.872 4.989-1.31c1.472.793 3.13 1.213 4.811 1.213 5.514 0 10-4.486 10-10s-4.486-10-10-10zm.012 18.125c-1.464 0-2.896-.38-4.148-1.1 l-.297-.172-3.085.811.823-3.003-.194-.301c-.818-1.267-1.25-2.742-1.25-4.254 0-4.412 3.587-8 8-8 2.203 0 4.275.858 5.832 2.415 1.557 1.557 2.415 3.63 2.415 5.832 0 4.413-3.587 8-8 8zm4.339-5.975c-.238-.119-1.407-.695-1.625-.774-.217-.079-.375-.119-.533.119-.158.238-.613.774-.753.933-.139.158-.278.179-.516.06-.238-.119-1.006-.371-1.916-1.184-.708-.631-1.185-1.411-1.324-1.649-.139-.238-.014-.367.104-.485.107-.107.238-.278.357-.417.119-.139.158-.238.238-.396.079-.158.04-.297-.02-.417-.06-.119-.533-1.284-.731-1.761-.192-.464-.388-.401-.533-.409-.137-.008-.293-.01-.45-.01-.157 0-.413.06-.631.307-.217.247-.829.81-.829 1.976 0 1.166 1.144 2.292 1.303 2.509.159.217 2.251 3.438 5.452 4.821 2.723 1.17 3.277.937 3.864.877.587-.06 1.917-.783 2.185-1.54.268-.757.268-1.405.188-1.544-.079-.139-.297-.217-.533-.336z"/></svg>
+    </a>
+
+    <header class="relative h-screen flex flex-col justify-start items-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1920" class="absolute w-full h-full object-cover opacity-25 z-0">
+        
+        <div class="w-full bg-white py-6 shadow-sm z-10 flex justify-center items-center">
+            <img src="imagens/LOGO.png" alt="Logo Festa Digital" class="h-48 md:h-56 w-auto object-contain">
+        </div>
+
+        <div class="relative z-10 px-4 max-w-4xl flex flex-col items-center justify-center flex-grow text-center">
+            <h1 class="text-5xl md:text-7xl mb-8 text-stone-900 tracking-wide font-light">Onde o amor se transforma em design</h1>
+            <a href="#servicos" class="bg-stone-800 text-white px-10 py-4 hover:bg-stone-600 transition tracking-widest uppercase text-xs border border-stone-800">Conheça nossos modelos</a>
+        </div>
+    </header>
+
+    <section id="servicos" class="py-24 px-4 max-w-7xl mx-auto">
+        <h2 class="text-5xl text-center mb-20 text-stone-900 tracking-wide">Nossas Soluções Digitais</h2>
+
+        <div class="mb-24">
+            <h3 class="text-2xl mb-3 text-stone-800 font-normal tracking-wider uppercase">Pré-Evento</h3>
+            <p class="text-2xl text-stone-600 font-normal mb-12 max-w-4xl leading-relaxed">Design, estruturação de sistemas e suporte completo antes do grande dia.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=600&q=80" class="card-img">
+                            <h4 class="text-xl font-normal mt-4 text-stone-800 px-4">Sites de Casamento</h4>
+                            <p class="text-base text-stone-600 px-4 mt-3 font-light leading-relaxed">Plataforma exclusiva com sua história, contagem regressiva e todos os detalhes para os convidados.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <span class="text-xs tracking-widest uppercase text-stone-500 mb-1">Investimento</span>
+                            <p class="text-4xl font-bold text-stone-900">R$ 400,00</p>
+                            <span class="text-sm text-stone-600 block mt-1 mb-2">x3 sem juros</span>
+                            <span class="text-xs text-stone-400 block mb-6">(Total: R$ 1.200,00)</span>
+                            <a href="https://wa.me/5514997373496" target="_blank" class="border border-stone-800 px-6 py-2 text-xs uppercase tracking-wider text-stone-800 hover:bg-stone-900 hover:text-white transition">Solicitar Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="imagens/gestao.jpg" class="card-img" alt="Gestão RSVP">
+                            <h4 class="text-xl font-normal mt-4 text-stone-800 px-4">Gestão RSVP</h4>
+                            <p class="text-base text-stone-600 px-4 mt-3 font-light leading-relaxed">Controle e confirmação de presença automatizada de forma simples, inteligente e em tempo real.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <span class="text-xs tracking-widest uppercase text-stone-500 mb-1">Investimento</span>
+                            <p class="text-4xl font-bold text-stone-900">R$ 150,00</p>
+                            <span class="text-sm text-stone-600 block mt-1 mb-2">x3 sem juros</span>
+                            <span class="text-xs text-stone-400 block mb-6">(Total: R$ 450,00)</span>
+                            <a href="https://wa.me/5514997373496" target="_blank" class="border border-stone-800 px-6 py-2 text-xs uppercase tracking-wider text-stone-800 hover:bg-stone-900 hover:text-white transition">Solicitar Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=600&q=80" class="card-img">
+                            <h4 class="text-xl font-normal mt-4 text-stone-800 px-4">Convites Digitais</h4>
+                            <p class="text-base text-stone-600 px-4 mt-3 font-light leading-relaxed">Interatividade completa com botões de geolocalização, confirmação de presença e lista de presentes.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <span class="text-xs tracking-widest uppercase text-stone-500 mb-1">Investimento</span>
+                            <p class="text-4xl font-bold text-stone-900">R$ 60,00</p>
+                            <span class="text-sm text-stone-600 block mt-1 mb-2">x3 sem juros</span>
+                            <span class="text-xs text-stone-400 block mb-6">(Total: R$ 180,00)</span>
+                            <a href="https://wa.me/5514997373496" target="_blank" class="border border-stone-800 px-6 py-2 text-xs uppercase tracking-wider text-stone-800 hover:bg-stone-900 hover:text-white transition">Solicitar Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="imagens/lista virtual.jpg" class="card-img" alt="Lista Virtual">
+                            <h4 class="text-xl font-normal mt-4 text-stone-800 px-4">Lista Virtual</h4>
+                            <p class="text-base text-stone-600 px-4 mt-3 font-light leading-relaxed">Criação de cotas de presentes divertidas com recebimento dos valores direto na sua conta.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <span class="text-xs tracking-widest uppercase text-stone-500 mb-1">Investimento</span>
+                            <p class="text-4xl font-bold text-stone-900">R$ 100,00</p>
+                            <span class="text-sm text-stone-600 block mt-1 mb-2">x3 sem juros</span>
+                            <span class="text-xs text-stone-400 block mb-6">(Total: R$ 300,00)</span>
+                            <a href="https://wa.me/5514997373496" target="_blank" class="border border-stone-800 px-6 py-2 text-xs uppercase tracking-wider text-stone-800 hover:bg-stone-900 hover:text-white transition">Solicitar Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+            <h3 class="text-2xl mb-3 text-stone-800 font-normal tracking-wider uppercase">Identidade & Sistemas Interativos</h3>
+            <p class="text-2xl text-stone-600 font-normal mb-12 max-w-4xl leading-relaxed">Experiência estética digital e sistemas inteligentes operados em tempo real no dia do evento.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="imagens/filtros.jpg" class="card-img" alt="Filtros Personalizados">
+                            <h4 class="text-xl font-normal mt-4 text-stone-800 px-4">Filtros Personalizados</h4>
+                            <p class="text-base text-stone-600 px-4 mt-3 font-light leading-relaxed">Criação exclusiva de filtros para Instagram com a identidade visual e as iniciais do casal.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <span class="text-xs tracking-widest uppercase text-stone-500 mb-1">Investimento</span>
+                            <p class="text-4xl font-bold text-stone-900">R$ 120,00</p>
+                            <span class="text-sm text-stone-600 block mt-1 mb-2">x3 sem juros</span>
+                            <span class="text-xs text-stone-400 block mb-6">(Total: R$ 360,00)</span>
+                            <a href="https://wa.me/5514997373496" target="_blank" class="border border-stone-800 px-6 py-2 text-xs uppercase tracking-wider text-stone-800 hover:bg-stone-900 hover:text-white transition">Solicitar Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="imagens/mural.jpg" class="card-img" alt="Mural Coletivo">
+                            <h4 class="text-xl font-normal mt-4 text-stone-800 px-4">Mural de Fotos Coletivo</h4>
+                            <p class="text-base text-stone-600 px-4 mt-3 font-light leading-relaxed">Espaço interativo para os convidados compartilharem fotos tiradas durante a festa direto no telão.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <span class="text-xs tracking-widest uppercase text-stone-500 mb-1">Investimento</span>
+                            <p class="text-4xl font-bold text-stone-900">R$ 250,00</p>
+                            <span class="text-sm text-stone-600 block mt-1 mb-2">x3 sem juros</span>
+                            <span class="text-xs text-stone-400 block mb-6">(Total: R$ 750,00)</span>
+                            <a href="https://wa.me/5514997373496" target="_blank" class="border border-stone-800 px-6 py-2 text-xs uppercase tracking-wider text-stone-800 hover:bg-stone-900 hover:text-white transition">Solicitar Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="imagens/quiz.jpg" class="card-img" alt="Quiz Interativo">
+                            <h4 class="text-xl font-normal mt-4 text-stone-800 px-4">Quiz & Jogos Interativos</h4>
+                            <p class="text-base text-stone-600 px-4 mt-3 font-light leading-relaxed">Jogos e quizzes dinâmicos sobre a história do casal para entreter e divertir os convidados no evento.</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <span class="text-xs tracking-widest uppercase text-stone-500 mb-1">Investimento</span>
+                            <p class="text-4xl font-bold text-stone-900">R$ 180,00</p>
+                            <span class="text-sm text-stone-600 block mt-1 mb-2">x3 sem juros</span>
+                            <span class="text-xs text-stone-400 block mb-6">(Total: R$ 540,00)</span>
+                            <a href="https://wa.me/5514997373496" target="_blank" class="border border-stone-800 px-6 py-2 text-xs uppercase tracking-wider text-stone-800 hover:bg-stone-900 hover:text-white transition">Solicitar Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-stone-100 overflow-hidden">
+        <h2 class="text-4xl text-center mb-16 text-stone-800 tracking-wide">Histórias Reais de Nossos Noivos</h2>
+        <div class="ticker-wrap">
+            <div class="ticker-move">
+                <div class="flex gap-8">
+                    <div class="bg-white p-8 w-80 shadow-sm shrink-0 border border-stone-200 text-center"><p class="italic text-stone-600">"O site ficou impecável, e nossos convidados amaram o mural de fotos!"</p><span class="block mt-4 text-xs tracking-widest text-stone-400 uppercase">— Ana & Lucas</span></div>
+                    <div class="bg-white p-8 w-80 shadow-sm shrink-0 border border-stone-200 text-center"><p class="italic text-stone-600">"O RSVP automatizado nos poupou semanas de estresse. Atendimento 10/10."</p><span class="block mt-4 text-xs tracking-widest text-stone-400 uppercase">— Bia & Felipe</span></div>
+                    <div class="bg-white p-8 w-80 shadow-sm shrink-0 border border-stone-200 text-center"><p class="italic text-stone-600">"Os convites digitais interativos ficaram absurdamente elegantes e chiques."</p><span class="block mt-4 text-xs tracking-widest text-stone-400 uppercase">— Clara & Bruno</span></div>
+                    <div class="bg-white p-8 w-80 shadow-sm shrink-0 border border-stone-200 text-center"><p class="italic text-stone-600">"A identidade visual conectou perfeitamente as telas com o ambiente."</p><span class="block mt-4 text-xs tracking-widest text-stone-400 uppercase">— Sofia & Marcos</span></div>
+                    <div class="bg-white p-8 w-80 shadow-sm shrink-0 border border-stone-200 text-center"><p class="italic text-stone-600">"O quiz sobre a nossa história foi o ponto alto e divertido da festa."</p><span class="block mt-4 text-xs tracking-widest text-stone-400 uppercase">— Julia & Pedro</span></div>
+                </div>
+                <div class="flex gap-8">
+                    <div class="bg-white p-8 w-80 shadow-sm shrink-0 border border-stone-200 text-center"><p class="italic text-stone-600">"O site ficou impecável, e nossos convidados amaram o mural de fotos!"</p><span class="block mt-4 text-xs tracking-widest text-stone-400 uppercase">— Ana & Lucas</span></div>
+                    <div class="bg-white p-8 w-80 shadow-sm shrink-0 border border-stone-200 text-center"><p class="italic text-stone-600">"O RSVP automatizado nos poupou semanas de estresse. Atendimento 10/10."</p><span class="block mt-4 text-xs tracking-widest text-stone-400 uppercase">— Bia & Felipe</span></div>
+                    <div class="bg-white p-8 w-80 shadow-sm shrink-0 border border-stone-200 text-center"><p class="italic text-stone-600">"Os convites digitais interativos ficaram absurdamente elegantes e chiques."</p><span class="block mt-4 text-xs tracking-widest text-stone-400 uppercase">— Clara & Bruno</span></div>
+                    <div class="bg-white p-8 w-80 shadow-sm shrink-0 border border-stone-200 text-center"><p class="italic text-stone-600">"A identidade visual conectou perfeitamente as telas com o ambiente."</p><span class="block mt-4 text-xs tracking-widest text-stone-400 uppercase">— Sofia & Marcos</span></div>
+                    <div class="bg-white p-8 w-80 shadow-sm shrink-0 border border-stone-200 text-center"><p class="italic text-stone-600">"O quiz sobre a nossa história foi o ponto alto e divertido da festa."</p><span class="block mt-4 text-xs tracking-widest text-stone-400 uppercase">— Julia & Pedro</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-900 text-stone-400 py-8 px-4 border-t border-stone-800 text-center text-xs tracking-wider">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 <a href="https://wa.me/5514997373496?text=ola%20vim%20do%20site(site%20desenvolvido%20festa%20digital)%20e%20quero%20o%20or%C3%A7amento%20para%20um%20site" target="_blank" class="text-stone-300 hover:text-green-400 transition font-medium">Musashi Digital</a>. Todos os direitos reservados.</p>
+            <p class="uppercase text-[10px] tracking-[0.2em] text-stone-500">Desenvolvido por 
+                <a href="https://wa.me/5514997373496?text=ola%20vim%20do%20site(site%20desenvolvido%20festa%20digital)%20e%20quero%20o%20or%C3%A7amento%20para%20um%20site" target="_blank" class="text-stone-300 hover:text-green-400 transition font-medium">Musashi Digital</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
